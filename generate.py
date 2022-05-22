@@ -22,7 +22,10 @@ while len(words) < length:
         possibilities.append(word)
         weights.append(weight)
 
+
     choice = random.choices(possibilities, weights=weights, k=1)
+    if choice[0] == "@@STOP@@":
+        break
     words.append(choice[0])
 
 print(" ".join(words))
